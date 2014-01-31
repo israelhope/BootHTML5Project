@@ -2,8 +2,11 @@
 
 class Main extends MY_Controller {
 
-	public function index()
-	{
+	public function __construct(){
+		parent::__construct();
+	}
+
+	public function index(){
 		$this->load->view('templates/template_v', $this);
 	}
 }

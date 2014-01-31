@@ -2,18 +2,20 @@
 
 class MY_Controller extends CI_Controller {
 
-	var $SYS_author 		= 'Harry';
-	var $SYS_title 			= 'Mi título';
-	var $SYS_description 	= 'Una corta descripción!!!';
-	var $SYS_keywords 		= array();
-	var $SYS_js				= array();
-	var $SYS_css 			= array();
-	var $SYS_analytics_id 	= null;
-	var $SYS_timezone		= "America/Mexico_City";
+	var $SYS_siteName 			= '';
+	var $SYS_metaTitle 			= '';
+	var $SYS_metaDescription 	= '';
+	var $SYS_metaKeywords 		= array();
+	var $SYS_js					= array();
+	var $SYS_css 				= array();
+	var $SYS_index 				= true; // visible por los robots
+	var $SYS_gaAccount 			= null; // Google Analytics Account. example: UA-XXXXXXXX-X
+	var $SYS_timezone			= "America/Mexico_City";
 
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set($this->SYS_timezone);
+		$this->lang = $this->config->item('language');
 	}
 }
 
