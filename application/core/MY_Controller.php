@@ -16,6 +16,16 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 		date_default_timezone_set($this->SYS_timezone);
 		$this->lang = $this->config->item('language');
+		// Facebook Open Grap
+		$this->og_prefix = array('og: http://ogp.me/ns#','fb: http://ogp.me/ns/fb#');
+		$this->og['og:site_name']	= $this->SYS_siteName;
+		$this->og['og:title']		= $this->SYS_metaTitle;
+		$this->og['og:description']	= $this->SYS_metaDescription;
+		$this->og['og:image']		= '';
+		$this->og['og:type']		= 'website';
+		$this->og['og:url']			= site_url($_SERVER['REQUEST_URI']);
+		$this->og['fb:app_id']		= '';
+		$this->og['fb:admins']		= array(''); // array of facebook id admins
 	}
 }
 

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'local.bootproject.com';
+$config['base_url']	= 'http://local.bootproject.com/';
 
 /*
 |--------------------------------------------------------------------------

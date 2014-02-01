@@ -216,6 +216,15 @@ AddDefaultCharset utf-8
   # RewriteBase /
 </IfModule>
 
+# Remove index.php file for URL's (CI fix :D) CodeIgniter fix
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond $1 !^(index\.php|images|robots\.txt|css)
+  RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
 # ------------------------------------------------------------------------------
 # | Suppressing / Forcing the "www." at the beginning of URLs                  |
 # ------------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html lang="<?= $lang ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="<?= $lang ?>" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="<?= $lang ?>" class="no-js"> <!--<![endif]-->
-<head>
+<head prefix="<?= implode(' ', $og_prefix); ?>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
 	<title><?=$SYS_metaTitle?></title>
@@ -19,6 +19,8 @@
 	<?php foreach ($SYS_css as $file): ?>
     	<link rel="stylesheet" href="<?= site_url(FOLDER_CSS.$file)?>">
     <?php endforeach ?>
+    
+    <?php $this->load->view('facebook/open_graph_tags_v') ?>
 </head>
 <body>
 	<?php foreach ($SYS_js as $file): ?>
