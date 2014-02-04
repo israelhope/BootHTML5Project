@@ -3,6 +3,9 @@ Thumbs.db
 
 */config/development
 */logs/log-*.php
+*/logs/development/log-*.php
+*/logs/testing/log-*.php
+*/logs/production/log-*.php
 */logs/!index.html
 */cache/*
 */cache/!index.html
