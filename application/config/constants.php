@@ -46,8 +46,23 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 define('FOLDER_CSS', 		'static/css/');
 define('FOLDER_JS', 		'static/js/');
 define('FOLDER_IMG', 		'static/img/');
+define('FOLDER_FONTS', 	    'static/fonts/');
 
+/*
+|--------------------------------------------------------------------------
+| TIME CONSTANTS
+|--------------------------------------------------------------------------
+|
+| Constantes para especificar un determinado tiempo
+|
+*/
 
+define('TIME_MINUTE', 	60);
+define('TIME_HOUR', 	60*60);
+define('TIME_DAY', 		60*60*24);
+define('TIME_WEEK', 	60*60*24*7);
+define('TIME_MONTH', 	60*60*24*30);
+define('TIME_YEAR', 	60*60*24*365);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
