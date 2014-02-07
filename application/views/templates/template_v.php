@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html lang="<?= $lang ?>" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="<?= $lang ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="<?= $lang ?>" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="<?= $lang ?>" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="<?= $language ?>" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="<?= $language ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="<?= $language ?>" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<?= $language ?>" class="no-js"> <!--<![endif]-->
 <head prefix="<?= implode(' ', $og_prefix); ?>">
 	<meta http-equiv="Content-Type" content="text/html; charset=<?= $charset?>">
 	<meta charset="<?= $charset?>">
@@ -11,7 +11,7 @@
 	<meta name="keywords" content="<?= implode(', ', $SYS_metaKeywords) ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php if ($SYS_index == TRUE): ?>
+	<?php if ($SYS_robots == TRUE): ?>
 		<meta name="robots" content="index, follow" >
 	<?php else: ?>
 		<meta name="robots" content="noindex">
@@ -22,6 +22,7 @@
     <?php $this->load->view('facebook/open_graph_tags_v') ?>
 </head>
 <body>
+	<?php $this->load->view('facebook/fb_jsdk_v')?>
 	<?php foreach ($SYS_js as $file): ?>
     	<script type="text/javascript" src="<?= site_url(FOLDER_JS.$file)?>" ></script>
     <?php endforeach ?>

@@ -8,14 +8,16 @@ class MY_Controller extends CI_Controller {
 	var $SYS_metaKeywords 		= array();
 	var $SYS_js					= array();
 	var $SYS_css 				= array();
-	var $SYS_index 				= true; // visible por los robots
+	var $SYS_robots 			= true; // visible por los robots
 	var $SYS_gaAccount 			= ''; // Google Analytics Account. example: UA-XXXXXXXX-X
+	var $SYS_fb_app_id 			= '255910224444776'; // Facebook app id
+	var $SYS_fb_jsdk 			= true;
 	var $SYS_timezone			= "America/Mexico_City";
 
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set($this->SYS_timezone);
-		$this->lang = $this->config->item('language');
+		$this->language = $this->config->item('language');
 		$this->charset = $this->config->item('charset');
 		// Facebook Open Grap
 		$this->og_prefix = array('og: http://ogp.me/ns#','fb: http://ogp.me/ns/fb#');
@@ -25,7 +27,7 @@ class MY_Controller extends CI_Controller {
 		$this->og['og:image']		= '';
 		$this->og['og:type']		= 'website';
 		$this->og['og:url']			= site_url($_SERVER['REQUEST_URI']);
-		$this->og['fb:app_id']		= '';
+		$this->og['fb:app_id']		= $this->SYS_fb_app_id;
 		$this->og['fb:admins']		= array(); // array of facebook id admins
 	}
 }
